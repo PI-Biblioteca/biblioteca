@@ -13,7 +13,7 @@ A versão acadêmica possui escopo próprio e será organizada como uma evoluç�
 - João Paulo
 - Caique Assis
 - Khaled Fatah
-- Murillo Costa
+- Murillo Santos
 
 ## Estrutura
 
