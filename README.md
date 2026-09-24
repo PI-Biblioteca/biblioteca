@@ -22,6 +22,12 @@ A versão acadêmica possui escopo próprio e será organizada como uma evoluç�
 - `database/` — scripts e documentação do banco de dados
 - `docs/` — requisitos, modelagem, algoritmos e modelo matemático
 
+## Linha de base e incremento
+
+A linha de base acadêmica corresponde aos requisitos, modelagem, protótipos e DDL produzidos anteriormente pela equipe.
+
+O incremento de 2026/2 é identificado pelas alterações de modelagem, documentação e desenvolvimento realizadas neste repositório. A separação entre os dois contextos está documentada em [Linha de Base e Organização](./docs/linha-de-base.md).
+
 ## Tecnologias previstas
 
 - Java
