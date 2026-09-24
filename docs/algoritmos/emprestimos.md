@@ -63,11 +63,14 @@ FIM
 ### Processamento
 1. Localizar o empréstimo.
 2. Verificar se existe e está ativo.
-3. Registrar a data da devolução.
-4. Atualizar o empréstimo.
+3. Comparar a data de devolução com a data prevista.
+4. Identificar se houve atraso.
+5. Calcular a multa quando houver atraso.
+6. Registrar a data da devolução e finalizar o empréstimo.
+7. Retornar o resultado da operação.
 
 ### Saída
-- Devolução registrada; ou
+- Devolução registrada com a quantidade de dias de atraso e multa; ou
 - mensagem de erro.
 
 ### Pseudocódigo
@@ -88,11 +91,35 @@ INÍCIO
         encerrar
     FIM_SE
 
+    dias_atraso ← calcular diferença entre data_devolucao e data_prevista
+
+    SE dias_atraso > 0 ENTÃO
+        multa ← calcularMulta(dias_atraso)
+    SENÃO
+        dias_atraso ← 0
+        multa ← 0
+    FIM_SE
+
     registrar data_devolucao
+    registrar dias_atraso
+    registrar multa
     atualizar empréstimo
 
     exibir "Devolução registrada com sucesso"
+    exibir dias_atraso
+    exibir multa
 FIM
 ```
 
-**Estruturas:** sequência, seleção e modularização por busca e atualização do empréstimo.
+### Modularização
+
+A devolução utiliza funções de apoio para separar responsabilidades:
+
+- `buscarEmprestimo(id)` — localiza o empréstimo.
+- `calcularDiasAtraso(data_devolucao, data_prevista)` — determina o atraso.
+- `calcularMulta(dias_atraso)` — calcula a multa quando houver atraso.
+- `registrarDevolucao(id, data)` — finaliza o empréstimo.
+
+O valor da multa e a fórmula matemática utilizada são definidos na documentação de [Matemática](../matematica/README.md), mantendo a modelagem algorítmica separada da modelagem matemática.
+
+**Estruturas:** sequência, seleção e modularização por busca, cálculo e atualização do empréstimo.
