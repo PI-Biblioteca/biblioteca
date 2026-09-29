@@ -1,8 +1,4 @@
-## Matriz de Integração
-
-| Disciplina / Área | Conceitos Aplicados | Aplicação na Unidade Funcional de Devolução | Evidências Previstas (Entrega 1) |
-|---|---|---|---|
-| # Matriz de Integração das Disciplinas — Sistema Biblioteca
+# Matriz de Integração das Disciplinas — Sistema Biblioteca
 
 ## Objetivo
 
@@ -28,8 +24,4 @@ A regra de devolução também depende da tabela `emprestimo` (id_emprestimo, IS
 
 - [x] Conceitos de cada disciplina identificados.
 - [x] Aplicação na unidade funcional documentada.
-- [x] Evidências previstas alinhadas à Entrega 1. |
-| **Algoritmos e Programação Estruturada** | Pseudocódigo, fluxogramas, variáveis de entrada, sequência lógica, tomada de decisão e saída. | Mapeamento do fluxo lógico de devolução: recebimento da data efetiva R, comparação com o prazo D e definição do status. | Pseudocódigo e Fluxograma no trabalho escrito e nos Anexos 03 e 04. |
-| **Matemática Computacional** | Funções matemáticas, variáveis discretas e cálculo de limite inferior via função `max`. | Aplicação da fórmula `A = max(0, R − D)`, em que R e D representam datas e a diferença (R − D) é calculada em dias, para determinar a quantidade A de dias em atraso sem gerar valores negativos. | Formulação matemática no trabalho escrito, Anexo 05 e Tabela de Casos de Teste (Anexo 06). |
-| **Banco de Dados / Modelagem de Dados** | Modelagem relacional, chaves primárias e estrangeiras, integridade referencial. | A regra de devolução consome os registros da tabela `emprestimo` (id_emprestimo, ISBN, CPF, data_emprestimo, data_devolucao); a integridade referencial é garantida pelas chaves estrangeiras ISBN → `livro` e CPF → `usuario` definidas no DDL. | Script DDL no GitHub e diagrama do modelo relacional (Anexo 01). |
-
+- [x] Evidências previstas alinhadas à Entrega 1.
