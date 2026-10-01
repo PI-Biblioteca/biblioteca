@@ -16,29 +16,37 @@ Esses artefatos representam a base anterior do projeto e não devem ser confundi
 
 ## Incremento 2026/2
 
-O trabalho desenvolvido neste repositório para a Entrega 1 concentra-se na revisão e integração dos conteúdos das disciplinas atuais.
+O trabalho desenvolvido para a Entrega 1 concentra-se na revisão e integração dos conteúdos das disciplinas atuais.
 
 O incremento inclui:
 
-- organização do repositório e do fluxo de contribuição;
+- organização do repositório documental e do fluxo de contribuição;
 - revisão da modelagem;
 - modelagem algorítmica;
-- definição da unidade funcional de devolução;
-- modelagem matemática do cálculo da multa;
+- decomposição da unidade funcional de devolução em funções/procedimentos;
+- modelagem matemática do cálculo dos dias de atraso;
 - casos de teste e validação;
 - documentação da integração entre as disciplinas.
+
+## Arquitetura dos repositórios
+
+O repositório `PI-Biblioteca/biblioteca` é dedicado à documentação, modelagem e evidências acadêmicas.
+
+A implementação será separada em:
+
+- **backend:** repositório próprio, derivado de um fork adaptado de `JoaoPauloOlt/library-api`;
+- **frontend:** repositório próprio, separado do backend.
+
+Os links definitivos dos repositórios de implementação serão adicionados quando forem criados.
 
 ## Histórico do repositório
 
 A organização do repositório permite distinguir a evolução do projeto por meio do histórico de commits e Pull Requests.
 
-O repositório foi inicializado em 23/09/2026 e recebeu posteriormente a documentação algorítmica e a organização do fluxo de contribuição.
+A Entrega 1 foi organizada em `entrega 1/`, com espaços para apresentação, trabalho escrito e anexos. A documentação de algoritmos também foi separada em arquivos específicos para facilitar manutenção e contribuição.
 
-A linha de base acadêmica anterior permanece como referência documental; o incremento de 2026/2 é identificado pelas alterações realizadas no histórico deste repositório.
+## Estrutura documental
 
-## Estrutura atual
-
-- `backend/` — API e regras de negócio.
-- `frontend/` — aplicação web.
-- `database/` — scripts e documentação do banco de dados.
-- `docs/` — requisitos, modelagem, algoritmos e modelo matemático.
+- `docs/` — requisitos, modelagem, algoritmos, matemática e integração.
+- `entrega 1/` — apresentação, trabalho escrito e anexos.
+- `CONTRIBUTING.md` — fluxo de contribuição e revisão.
