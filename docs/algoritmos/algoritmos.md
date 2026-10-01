@@ -1,8 +1,8 @@
 # Modelagem de Algoritmos
 
-Documento índice da modelagem algorítmica da versão inicial do Projeto Integrado 2026/2.
+Documento índice da modelagem algorítmica do Projeto Integrado 2026/2.
 
-Os algoritmos foram separados por funcionalidade para facilitar a implementação e a contribuição de cada integrante.
+A modelagem utiliza uma unidade funcional de devolução e apresenta decomposição em funções/procedimentos, além de sequência, seleção e operações de processamento.
 
 ## Documentos
 
@@ -12,14 +12,18 @@ Os algoritmos foram separados por funcionalidade para facilitar a implementaçã
 - [Histórico de Empréstimos](./historico.md)
 - [Modularização e Fluxo](./apoio-e-fluxo.md)
 
-## Divisão inicial da equipe
+## Unidade funcional principal
 
-| Integrante | Algoritmos |
-|---|---|
-| **João Paulo** | Cadastro de livros e autores |
-| **Caique Assis** | Cadastro de usuários e disponibilidade |
-| **Khaled Fatah** | Empréstimo, devolução e histórico |
+`processarDevolucao()` coordena a operação de devolução e delega responsabilidades para:
+
+1. `localizarEmprestimo(idEmprestimo)`;
+2. `validarDevolucao(emprestimo)`;
+3. `calcularAtraso(dataPrevista, dataDevolucao)`;
+4. `registrarDevolucao(emprestimo, dataDevolucao)`;
+5. `atualizarDisponibilidade(exemplar)`.
+
+Essa decomposição será utilizada como referência para a futura implementação do backend.
 
 ## Escopo
 
-Os algoritmos correspondem às funcionalidades iniciais RF01–RF07 da Biblioteca. Funcionalidades futuras, como multas, relatórios avançados e autenticação avançada, ficam fora desta modelagem inicial.
+A modelagem contempla cadastro, usuários, disponibilidade, empréstimos, devoluções e histórico. O cálculo quantitativo dos dias de atraso é tratado na documentação de Matemática.
