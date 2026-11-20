@@ -92,6 +92,17 @@ Configurar `VITE_API_URL=http://localhost:8080` no ambiente local. A aplicação
 8. Entrar como ADMIN, isentar a multa com justificativa e demonstrar os dados de auditoria.
 9. Apresentar o CI e os testes de integração do backend e frontend.
 
+## CI automatizado verificado em 20/11/2026
+
+Os seguintes pipelines foram consultados no GitHub Actions e concluíram com sucesso:
+
+- Backend — cenário de seed e empréstimo atrasado, PR [#92](https://github.com/JoaoPauloOlt/library-api/pull/92), [execução CI #849](https://github.com/JoaoPauloOlt/library-api/actions/runs/44738655566). Executou Maven verify, PostgreSQL, JaCoCo e SonarCloud.
+- Backend — integração de multas com PostgreSQL, PR [#90](https://github.com/JoaoPauloOlt/library-api/pull/90), [execução CI #823](https://github.com/JoaoPauloOlt/library-api/actions/runs/44374906878). Verificou devolução atrasada, persistência da multa, disponibilidade do exemplar, eventos da Outbox, devolução no prazo, prevenção de duplicidade e isenção administrativa.
+- Frontend — integração da tela de multas, PR [#24](https://github.com/JoaoPauloOlt/library-web/pull/24), [execução Frontend CI #157](https://github.com/JoaoPauloOlt/library-web/actions/runs/44739019374). Lint, testes e build concluídos com sucesso.
+- Frontend — fluxo de circulação de funcionários, PR [#23](https://github.com/JoaoPauloOlt/library-web/pull/23), [execução Frontend CI #153](https://github.com/JoaoPauloOlt/library-web/actions/runs/43443254099). Lint, testes e build concluídos com sucesso.
+
+Esses resultados comprovam a execução automatizada dos respectivos repositórios e cenários. Eles não substituem a demonstração manual da aplicação integrada com os três perfis e a coleta de capturas de tela.
+
 ## Registro de evidências
 
 | Evidência | Status |
@@ -104,6 +115,6 @@ Configurar `VITE_API_URL=http://localhost:8080` no ambiente local. A aplicação
 | Devolução e disponibilidade | Pendente de captura |
 | Multa persistida | Pendente de captura |
 | Consulta e isenção administrativa | Pendente de captura |
-| CI backend e frontend aprovado | Pendente de anexar os links/prints finais |
+| CI backend e frontend aprovado | Comprovado por execuções GitHub Actions #849, #823 e #157; anexar capturas dos resultados à apresentação |
 
 Não declarar a validação completa apenas com base na existência de endpoints ou testes. A pontuação deve ser sustentada por execução integrada observável e evidências anexadas à entrega.
