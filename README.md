@@ -6,7 +6,11 @@ Projeto Integrado 2026/2 — Sistema de Gestão de Biblioteca.
 
 Projeto acadêmico desenvolvido para o Projeto Integrado da Faculdade Anhanguera, com foco em uma biblioteca de faculdade e em sua operação pelos funcionários responsáveis pelo atendimento e pelo acervo.
 
-O repositório principal do Projeto Integrado é destinado à documentação, modelagem e evidências da entrega. A implementação executável será mantida em repositórios separados de backend e frontend.
+O repositório principal do Projeto Integrado é destinado à documentação, modelagem e evidências da entrega. A implementação executável está mantida em repositórios separados e integrados:
+- Backend: [JoaoPauloOlt/library-api](https://github.com/JoaoPauloOlt/library-api)
+- Frontend: [JoaoPauloOlt/library-web](https://github.com/JoaoPauloOlt/library-web)
+
+A validação da Entrega 2 deve considerar o estado integrado dos dois repositórios, e não apenas os artefatos de documentação.
 
 ## Equipe
 
@@ -35,19 +39,21 @@ O incremento de 2026/2 concentra-se na revisão da modelagem, integração das d
 
 ### Backend
 
-O backend será desenvolvido em um repositório separado, a partir de um fork adaptado de [JoaoPauloOlt/library-api](https://github.com/JoaoPauloOlt/library-api).
+O backend executável está no repositório [JoaoPauloOlt/library-api](https://github.com/JoaoPauloOlt/library-api), com Java 17, Spring Boot, Spring Security, JWT/RBAC, JPA/Hibernate e PostgreSQL.
 
 Tecnologias previstas:
-- Java
-- Spring Boot
+- Java 17
+- Spring Boot 3
+- Spring Security, JWT e RBAC
 - PostgreSQL
 - JPA / Hibernate
+- Maven e testes automatizados com JaCoCo
 
 A base será simplificada e ajustada ao escopo e às limitações acadêmicas do Projeto Integrado antes de ser considerada a implementação oficial.
 
 ### Frontend
 
-O frontend será desenvolvido e mantido em um repositório separado. A tecnologia específica poderá ser refinada conforme as limitações e necessidades da implementação.
+O frontend executável está no repositório [JoaoPauloOlt/library-web](https://github.com/JoaoPauloOlt/library-web), desenvolvido com React, Vite, React Router e Axios. Ele consome a API por meio de `VITE_API_URL` e aplica as permissões RBAC na navegação e nas operações.
 
 ## Escopo acadêmico inicial
 
@@ -58,5 +64,6 @@ O frontend será desenvolvido e mantido em um repositório separado. A tecnologi
 - Consulta de disponibilidade
 - Histórico de empréstimos
 - Cálculo dos dias de atraso
+- Geração e consulta de multas decorrentes da devolução em atraso
 
 O escopo poderá ser refinado durante as etapas de desenvolvimento, sem ampliar desnecessariamente a primeira versão.
