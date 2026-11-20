@@ -96,7 +96,7 @@ Configurar `VITE_API_URL=http://localhost:8080` no ambiente local. A aplicação
 
 Os seguintes pipelines foram consultados no GitHub Actions e concluíram com sucesso:
 
-- Backend — cenário de seed e empréstimo atrasado, PR [#92](https://github.com/JoaoPauloOlt/library-api/pull/92), [execução CI #849](https://github.com/JoaoPauloOlt/library-api/actions/runs/44738655566). Executou Maven verify, PostgreSQL, JaCoCo e SonarCloud.
+- Backend — cenário de seed e empréstimo atrasado, PR [#92](https://github.com/JoaoPauloOlt/library-api/pull/92), [execução CI #849](https://github.com/JoaoPauloOlt/library-api/actions/runs/44738655566). Executou Maven verify, PostgreSQL, JaCoCo e SonarCloud. Resultado: 288 testes, zero falhas/erros, build concluído e cobertura global de linhas de 97,10% (1.472/1.516).
 - Backend — integração de multas com PostgreSQL, PR [#90](https://github.com/JoaoPauloOlt/library-api/pull/90), [execução CI #823](https://github.com/JoaoPauloOlt/library-api/actions/runs/44374906878). Verificou devolução atrasada, persistência da multa, disponibilidade do exemplar, eventos da Outbox, devolução no prazo, prevenção de duplicidade e isenção administrativa.
 - Frontend — integração da tela de multas, PR [#24](https://github.com/JoaoPauloOlt/library-web/pull/24), [execução Frontend CI #157](https://github.com/JoaoPauloOlt/library-web/actions/runs/44739019374). Lint, testes e build concluídos com sucesso.
 - Frontend — fluxo de circulação de funcionários, PR [#23](https://github.com/JoaoPauloOlt/library-web/pull/23), [execução Frontend CI #153](https://github.com/JoaoPauloOlt/library-web/actions/runs/43443254099). Lint, testes e build concluídos com sucesso.
