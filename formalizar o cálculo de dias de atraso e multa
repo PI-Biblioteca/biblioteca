@@ -1,0 +1,210 @@
+# Formalizar o cálculo de dias de atraso e multa
+
+## 1. Objetivo
+
+Formalizar matematicamente o cálculo de dias de atraso na devolução de livros e o cálculo da multa correspondente, utilizando as regras de negócio previamente aprovadas, de modo que os resultados possam ser reproduzidos e verificados manualmente.
+
+## 2. Variáveis e unidades
+
+| Variável | Descrição | Unidade |
+|---|---|---|
+| D | Data prevista de devolução | Data (DD/MM/AAAA) |
+| R | Data efetiva de devolução | Data (DD/MM/AAAA) |
+| A | Quantidade de dias de atraso | Dias |
+| Vd | Valor da multa por dia de atraso | Reais (R$) |
+| Vm | Valor total da multa | Reais (R$) |
+
+## 3. Fórmula para cálculo dos dias de atraso
+
+A quantidade de dias de atraso será determinada pela diferença entre a data efetiva de devolução (R) e a data prevista (D), considerando apenas as datas e utilizando dias corridos.
+
+**Fórmula:**
+
+    A = max(0, R - D)
+
+Onde:
+
+- A representa a quantidade de dias de atraso.
+- R representa a data efetiva de devolução.
+- D representa a data prevista de devolução.
+- max(0, R - D) garante que o resultado não seja negativo.
+
+A diferença entre as datas será calculada em dias corridos, incluindo sábados, domingos e feriados, sem considerar os horários.
+
+- Se R for anterior a D, o resultado será 0.
+- Se R for igual a D, o resultado será 0.
+- Se R for posterior a D, o resultado será a quantidade de dias corridos entre as datas.
+
+O primeiro dia de atraso corresponde ao dia seguinte à data prevista de devolução.
+
+## 4. Fórmula para cálculo da multa
+
+A multa será calculada a partir da quantidade de dias de atraso, multiplicada pelo valor diário previamente aprovado.
+
+**Fórmula:**
+
+    Vm = A * Vd
+
+Onde:
+
+- Vm representa o valor total da multa.
+- A representa a quantidade de dias de atraso.
+- Vd representa o valor diário da multa.
+
+O valor diário estabelecido será de **R$ 2,00**.
+
+    Vd = R$ 2,00
+
+Portanto, o cálculo da multa utilizará a quantidade de dias de atraso multiplicada por R$ 2,00.
+
+## 5. Exemplos numéricos
+
+Para os exemplos abaixo, será utilizada a data prevista de devolução de 10/11/2026 e o valor diário de R$ 2,00.
+
+### 5.1. Devolução antecipada
+
+| Variável | Valor |
+|---|---|
+| Data prevista (D) | 10/11/2026 |
+| Data efetiva (R) | 08/11/2026 |
+| Diferença entre as datas | -2 dias |
+| Dias de atraso (A) | 0 dias |
+| Valor diário (Vd) | R$ 2,00 |
+
+**Cálculo dos dias de atraso:**
+
+    A = max(0, 08/11/2026 - 10/11/2026)
+    A = max(0, -2)
+    A = 0 dias
+
+**Cálculo da multa:**
+
+    Vm = A * Vd
+    Vm = 0 * 2,00
+    Vm = R$ 0,00
+
+Resultado: a devolução ocorreu 2 dias antes do prazo, portanto não haverá atraso nem cobrança de multa.
+
+### 5.2. Devolução na data prevista
+
+| Variável | Valor |
+|---|---|
+| Data prevista (D) | 10/11/2026 |
+| Data efetiva (R) | 10/11/2026 |
+| Diferença entre as datas | 0 dias |
+| Dias de atraso (A) | 0 dias |
+| Valor diário (Vd) | R$ 2,00 |
+
+**Cálculo dos dias de atraso:**
+
+    A = max(0, 10/11/2026 - 10/11/2026)
+    A = max(0, 0)
+    A = 0 dias
+
+**Cálculo da multa:**
+
+    Vm = A * Vd
+    Vm = 0 * 2,00
+    Vm = R$ 0,00
+
+Resultado: a devolução ocorreu na data prevista, portanto não haverá atraso nem cobrança de multa.
+
+### 5.3. Devolução com 1 dia de atraso
+
+| Variável | Valor |
+|---|---|
+| Data prevista (D) | 10/11/2026 |
+| Data efetiva (R) | 11/11/2026 |
+| Diferença entre as datas | 1 dia |
+| Dias de atraso (A) | 1 dia |
+| Valor diário (Vd) | R$ 2,00 |
+
+**Cálculo dos dias de atraso:**
+
+    A = max(0, 11/11/2026 - 10/11/2026)
+    A = max(0, 1)
+    A = 1 dia
+
+**Cálculo da multa:**
+
+    Vm = A * Vd
+    Vm = 1 * 2,00
+    Vm = R$ 2,00
+
+Resultado: a devolução ocorreu 1 dia após o prazo, portanto será aplicada uma multa de R$ 2,00.
+
+### 5.4. Devolução com 3 dias de atraso
+
+| Variável | Valor |
+|---|---|
+| Data prevista (D) | 10/11/2026 |
+| Data efetiva (R) | 13/11/2026 |
+| Diferença entre as datas | 3 dias |
+| Dias de atraso (A) | 3 dias |
+| Valor diário (Vd) | R$ 2,00 |
+
+**Cálculo dos dias de atraso:**
+
+    A = max(0, 13/11/2026 - 10/11/2026)
+    A = max(0, 3)
+    A = 3 dias
+
+**Cálculo da multa:**
+
+    Vm = A * Vd
+    Vm = 3 * 2,00
+    Vm = R$ 6,00
+
+Resultado: a devolução ocorreu 3 dias após o prazo, portanto será aplicada uma multa de R$ 6,00.
+
+### 5.5. Devolução com 7 dias de atraso
+
+| Variável | Valor |
+|---|---|
+| Data prevista (D) | 10/11/2026 |
+| Data efetiva (R) | 17/11/2026 |
+| Diferença entre as datas | 7 dias |
+| Dias de atraso (A) | 7 dias |
+| Valor diário (Vd) | R$ 2,00 |
+
+**Cálculo dos dias de atraso:**
+
+    A = max(0, 17/11/2026 - 10/11/2026)
+    A = max(0, 7)
+    A = 7 dias
+
+**Cálculo da multa:**
+
+    Vm = A * Vd
+    Vm = 7 * 2,00
+    Vm = R$ 14,00
+
+Resultado: a devolução ocorreu 7 dias após o prazo, portanto será aplicada uma multa de R$ 14,00.
+
+## 6. Resumo dos resultados
+
+| Data prevista | Data efetiva | Dias de atraso | Multa |
+|---|---|---|---|
+| 10/11/2026 | 08/11/2026 | 0 | R$ 0,00 |
+| 10/11/2026 | 10/11/2026 | 0 | R$ 0,00 |
+| 10/11/2026 | 11/11/2026 | 1 | R$ 2,00 |
+| 10/11/2026 | 13/11/2026 | 3 | R$ 6,00 |
+| 10/11/2026 | 17/11/2026 | 7 | R$ 14,00 |
+
+## 7. Conferência dos cálculos
+
+Os cálculos foram conferidos manualmente utilizando as fórmulas estabelecidas:
+
+    A = max(0, R - D)
+
+    Vm = A * Vd
+
+Os resultados demonstram que devoluções antecipadas ou realizadas na data prevista não geram multa, enquanto devoluções posteriores resultam em cobrança proporcional aos dias corridos de atraso.
+
+A conferência e o compartilhamento dos resultados com João Paulo e Gustavo deverão ser realizados para validação dos cálculos.
+
+## 8. Conclusão
+
+O modelo matemático formaliza o cálculo de dias de atraso e o valor da multa a partir das datas de devolução e do valor diário aprovado.
+
+As fórmulas, variáveis, unidades e exemplos numéricos permitem que outra pessoa reproduza os cálculos manualmente e obtenha os mesmos resultados, servindo como referência para a futura implementação e elaboração dos testes do Sistema de Biblioteca.
