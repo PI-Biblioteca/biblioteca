@@ -1,0 +1,97 @@
+# Algoritmo de Devolução de Livros
+
+## 1. Objetivo
+
+Documentar a sequência lógica do processo de devolução de livros, definindo as etapas de validação, registro da devolução, identificação de atrasos e cálculo da multa, de acordo com a política estabelecida anteriormente.
+
+## 2. Algoritmo de devolução
+
+```text
+INÍCIO
+
+1. Receber o identificador do empréstimo e a data de devolução.
+
+2. Verificar se o empréstimo existe.
+   Se não existir, encerrar o processo.
+
+3. Verificar se a devolução já foi registrada.
+   Se já foi registrada, impedir novo registro.
+
+4. Validar a data de devolução.
+   Se a data for inválida, solicitar correção.
+
+5. Obter a data prevista para devolução.
+
+6. Comparar a data de devolução com a data prevista.
+
+   SE a data de devolução for anterior à data prevista:
+       Classificar como devolução antecipada.
+       Definir multa como zero.
+
+   SENÃO SE a data de devolução for igual à data prevista:
+       Classificar como devolução no prazo.
+       Definir multa como zero.
+
+   SENÃO:
+       Classificar como devolução atrasada.
+       Calcular os dias de atraso.
+       Calcular a multa conforme a fórmula aprovada.
+
+7. Registrar a data de devolução,
+   a classificação e o valor da multa.
+
+8. Atualizar o status do empréstimo
+   e disponibilizar o livro para novo empréstimo,
+   conforme as regras do sistema.
+
+FIM
+```
+
+## 3. Fluxo de decisões
+
+| Situação | Condição | Resultado |
+|---|---|---|
+| Devolução antecipada | Data de devolução menor que a data prevista | Multa igual a zero |
+| Devolução no prazo | Data de devolução igual à data prevista | Multa igual a zero |
+| Devolução atrasada | Data de devolução maior que a data prevista | Calcular atraso e multa |
+
+## 4. Validações necessárias
+
+- Verificar se o empréstimo informado existe.
+- Verificar se o empréstimo ainda está ativo.
+- Verificar se a devolução já foi registrada.
+- Validar se a data de devolução é válida.
+- Verificar se a data de devolução não é anterior à data de empréstimo.
+- Verificar se a data prevista para devolução está corretamente registrada.
+- Garantir que o cálculo da multa seja realizado somente quando houver atraso.
+
+## 5. Casos especiais
+
+| Caso | Tratamento |
+|---|---|
+| Empréstimo inexistente | Impedir o registro e informar que o empréstimo não foi encontrado. |
+| Devolução já registrada | Impedir duplicidade no registro. |
+| Data inválida | Solicitar correção antes de continuar. |
+| Data anterior ao empréstimo | Impedir o registro e solicitar correção. |
+| Data prevista ausente | Impedir o cálculo e registrar o problema. |
+| Devolução antecipada | Registrar a devolução sem multa. |
+| Devolução no prazo | Registrar a devolução sem multa. |
+| Devolução atrasada | Calcular os dias de atraso e a multa conforme a política aprovada. |
+
+## 6. Momento do cálculo
+
+O cálculo dos dias de atraso e da multa deverá ocorrer após a validação da data de devolução e a comparação com a data prevista.
+
+A multa somente deverá ser calculada quando a devolução for classificada como atrasada, utilizando as fórmulas definidas nas sub-issues anteriores.
+
+## 7. Revisão do algoritmo
+
+O algoritmo deverá ser revisado utilizando os exemplos matemáticos definidos nas sub-issues anteriores, garantindo que os resultados obtidos pela lógica sejam compatíveis com a política de atraso e multa.
+
+Após a revisão, a documentação deverá ser encaminhada a João Paulo e Gustavo para análise.
+
+## 8. Conclusão
+
+O algoritmo documenta a sequência lógica do registro de devolução, contemplando as validações necessárias, as decisões relacionadas às datas, o momento do cálculo da multa e os casos especiais.
+
+A implementação deverá seguir as regras matemáticas previamente aprovadas, garantindo consistência entre a documentação, os cálculos e o comportamento esperado do sistema.
